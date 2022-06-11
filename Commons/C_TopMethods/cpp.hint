@@ -1,0 +1,5 @@
+#define CTOPMETHODS_API __declspec(dllexport)
+#define CTOPMETHODS_API __declspec(dllimport)
+
+#define VIDEODEVICEHELPER_API __declspec(dllexport)
+#define VIDEODEVICEHELPER_API __declspec(dllimport)

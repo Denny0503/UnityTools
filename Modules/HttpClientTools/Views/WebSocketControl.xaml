@@ -1,0 +1,136 @@
+﻿<controls:RegionViewControl
+    xmlns:controls="clr-namespace:TopUIControl.Controls;assembly=TopUIControl"
+    x:Class="HttpClientTools.Views.WebSocketControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    xmlns:local="clr-namespace:HttpClientTools.Views"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    mc:Ignorable="d" d:DesignHeight="1080" d:DesignWidth="1920"
+    FontFamily="{StaticResource DefaultFontFamily}" Foreground="#333333">
+
+    <Control.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/PhoenixSkins;component/Styles/Commons/PhoenixSkins.Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/PhoenixSkins;component/Styles/Commons/PhoenixSkins.Sizes.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/PhoenixSkins;component/Styles/Commons/Accent/PhoenixSkins.LightBlue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/PhoenixSkins;component/Styles/Commons/Primary/PhoenixSkins.Gray.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Control.Resources>
+
+
+    <Grid >
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Vertical" >
+                <hc:Card Background="{DynamicResource PrimaryHueLightBrush}" Padding="5" Margin="10">
+                    <Expander ExpandDirection="Down" Header="WebSocket服务器" IsExpanded="True" Background="Transparent" >
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Margin="5" VerticalAlignment="Center">
+                                <Label Content="服务器地址：" VerticalAlignment="Center"/>
+                                <hc:Card Padding="8 0" Panel.ZIndex="1" Height="auto">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <hc:TextBox Grid.Column="1" hc:InfoElement.Placeholder="localhost:8080" Padding="2,0,0,0" ShowClearButton="True"
+                                                    Height="26" Text="{Binding WebSocketServerUrl}" HorizontalContentAlignment="Left"
+                                                    BorderThickness="0" MinWidth="200" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <TextBlock Text="ws://" Grid.Column="0" VerticalAlignment="Center" Opacity="0.56" Padding="5,0,0,0" Width="40" FontSize="14"/>
+                                        <CheckBox Content="SSL" Grid.Column="2" VerticalAlignment="Center" Margin="15,0"/>
+                                    </Grid>
+                                </hc:Card>
+                                <Button Content="{Binding BtnServerStatus}" Width="100" Margin="5,0" Command="{Binding BtnFunctionCommand}" CommandParameter="StartWebSocketServer"/>
+                                <TextBlock Text="{Binding WebSocketStatus}" VerticalAlignment="Center" Margin="5,0"/>
+                            </StackPanel>
+                            <Grid Height="320" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <GroupBox Header="显示数据" Grid.Column="0" Margin="5" >
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                        <hc:TextBox Text="{Binding ShowReceivedData}" TextWrapping="Wrap" IsReadOnly="True"
+                                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                                    VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                                    </ScrollViewer>
+                                </GroupBox>
+                                <GroupBox Header="发送数据" Grid.Column="1" Margin="5" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <hc:TextBox Text="{Binding ServerSendText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="0" VerticalAlignment="Stretch" TextWrapping="Wrap" 
+                                                 VerticalContentAlignment="Top" HorizontalContentAlignment="Left" hc:InfoElement.Placeholder="输入内容。。。"/>
+                                        <Button Content="发送" Grid.Row="1" HorizontalAlignment="Right" Margin="10,5" Command="{Binding BtnFunctionCommand}" CommandParameter="ServerSend"
+                                                IsEnabled="{Binding IsServerStart, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                </hc:Card>
+
+                <hc:Card  Background="{DynamicResource PrimaryHueLightBrush}" Padding="5" Margin="10,0,10,10">
+                    <Expander ExpandDirection="Down" Header="WebSocket客户端" IsExpanded="True" Background="Transparent">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Margin="5" VerticalAlignment="Center">
+                                <Label Content="服务器地址：" VerticalAlignment="Center"/>
+                                <hc:Card Padding="8 0" Panel.ZIndex="1" Height="auto">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <hc:TextBox Grid.Column="1" hc:InfoElement.Placeholder="localhost:8080" Padding="2,0,0,0" 
+                                                    Height="26" Text="{Binding ClientConnectUrl}" HorizontalContentAlignment="Left"
+                                                 BorderThickness="0" MinWidth="200" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <TextBlock Text="ws://" Grid.Column="0" VerticalAlignment="Center" Opacity="0.56" Padding="5,0,0,0" Width="40" FontSize="14"/>
+                                        <CheckBox Content="SSL" Grid.Column="2" VerticalAlignment="Center" Margin="15,0"/>
+                                    </Grid>
+                                </hc:Card>
+                                <Button Content="{Binding BtnClientConnect, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="100" Margin="5,0" 
+                                        Command="{Binding BtnFunctionCommand}" CommandParameter="ConnectServer"/>
+                                <TextBlock Text="{Binding ConnectedStatus, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" Margin="5,0"/>
+                            </StackPanel>
+                            <Grid Height="320">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <GroupBox Header="显示数据" Grid.Column="0" Margin="5" >
+                                    <ScrollViewer x:Name="ReceivedDataScrollViewer" VerticalScrollBarVisibility="Auto">
+                                        <hc:TextBox Text="{Binding ClientShowReceivedData}" TextWrapping="Wrap" IsReadOnly="True"
+                                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextChanged="TextBox_TextChanged"
+                                                    VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                                    </ScrollViewer>
+                                </GroupBox>
+                                <GroupBox Header="发送数据" Grid.Column="1" Margin="5" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <hc:TextBox Text="{Binding ClientSendText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="0" VerticalAlignment="Stretch" TextWrapping="Wrap" 
+                                                 VerticalContentAlignment="Top" HorizontalContentAlignment="Left" hc:InfoElement.Placeholder="输入内容。。。"/>
+                                        <Button Content="发送" Grid.Row="1" HorizontalAlignment="Right" Margin="10,5" Command="{Binding BtnFunctionCommand}" CommandParameter="ClientSend"
+                                                IsEnabled="{Binding IsClientConnect, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                </hc:Card>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</controls:RegionViewControl>

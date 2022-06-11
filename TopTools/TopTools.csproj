@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+        <PackageIcon>Logo.png</PackageIcon>
+        <OutputPath>../Build/$(Configuration)</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="Resources\Favicon.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommonServiceLocator" Version="2.0.6" />
+        <PackageReference Include="ControlzEx" Version="5.0.1" />
+        <PackageReference Include="HandyControl" Version="3.3.0" />
+        <PackageReference Include="log4net" Version="2.0.14" />
+        <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+        <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Prism.Core" Version="8.1.97" />
+        <PackageReference Include="Prism.Unity" Version="8.1.97" />
+        <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+        <PackageReference Include="System.Buffers" Version="4.5.1" />
+        <PackageReference Include="System.Memory" Version="4.5.4" />
+        <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+        <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+        <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+        <PackageReference Include="Unity" Version="5.11.10" />
+        <PackageReference Include="Unity.Abstractions" Version="5.11.7" />
+        <PackageReference Include="Unity.Container" Version="5.11.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Commons\TopMethods\TopMethods.csproj" />
+        <ProjectReference Include="..\UI\PhoenixSkins\PhoenixSkins.csproj" />
+        <ProjectReference Include="..\UI\PhoenixUi\PhoenixUi.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Resources\Favicon.ico" />
+        <Resource Include="Resources\Logo.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Resources\Logo.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+</Project>

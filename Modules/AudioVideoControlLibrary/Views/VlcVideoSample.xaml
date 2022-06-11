@@ -1,0 +1,75 @@
+﻿<uiControls:RegionViewControl
+    x:Class="AudioVideoControlLibrary.Views.VlcVideoSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:AudioVideoControlLibrary.Views"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:uiControls="clr-namespace:TopUIControl.Controls;assembly=TopUIControl" 
+    xmlns:vlc="clr-namespace:LibVLCSharp.WPF;assembly=LibVLCSharp.WPF"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="1366"
+    FontFamily="微软雅黑" Background="Transparent" Unloaded="RegionViewControl_Unloaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="52"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>            
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    VerticalAlignment="Center" Height="36">
+            <TextBlock Text="视频地址：" Foreground="#333333" Height="auto" FontSize="16" Margin="5,0" 
+                       VerticalAlignment="Center"/>
+            <TextBox x:Name="VideoUrl" Width="360" Height="32" Margin="5,0" 
+                     Text="http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
+                     VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Content="打开" Width="100" Height="32" Margin="5,0" Click="Button_Click"/>
+            <Button Content="关闭" Width="100" Height="32" Margin="5,0" Click="Button_Click_1"/>
+        </StackPanel>
+
+        <vlc:VideoView x:Name="VlcVideoView" Grid.Column="1" Grid.Row="1" Margin="10"
+                       Width="1024" Height="580" Background="#EEEEEE"
+                       VerticalAlignment="Top">
+            <Canvas x:Name="VideoMaskCanvas" Visibility="Collapsed" Background="#01333333">
+                <Line Stroke="Red" StrokeDashArray="3" StrokeDashCap="Round"
+                      StrokeEndLineCap="Round" StrokeStartLineCap="Round"                      
+                      StrokeThickness="5" X1="20" Y1="20" X2="1004" Y2="560"/>
+                <Line Stroke="Red" StrokeDashArray="3" StrokeDashCap="Round"
+                      StrokeEndLineCap="Round" StrokeStartLineCap="Round"
+                      StrokeThickness="5" X1="1004" Y1="20" X2="20" Y2="560"/>
+            </Canvas>
+        </vlc:VideoView>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <CheckBox x:Name="ShowVideoMask" Content="显示视频图层蒙版" Margin="5" FontSize="16" 
+                      VerticalAlignment="Center" VerticalContentAlignment="Center"
+                      Click="ShowVideoMask_Click"/>
+        </StackPanel>
+
+        <StackPanel Height="62" Orientation="Horizontal" Grid.Row="2" Grid.Column="1"
+                    HorizontalAlignment="Center">
+            <Button Margin="5" Style="{StaticResource ButtonInfo}" hc:IconElement.Geometry="{StaticResource ControllerJumpToStartGeometry}"/>
+            <ToggleButton x:Name="PlayOrPause" Margin="5" Style="{StaticResource ToggleButtonIconInfo}" 
+                          hc:IconSwitchElement.Geometry="{StaticResource ControllerPlayGeometry}" 
+                          hc:IconSwitchElement.GeometrySelected="{StaticResource ControllerPauseGeometry}"
+                          Click="PlayOrPause_Click"/>
+            <Button Margin="5" Style="{StaticResource ButtonInfo}" hc:IconElement.Geometry="{StaticResource ControllerNextGeometry}"/>
+            <ToggleButton Margin="5" Style="{StaticResource ToggleButtonIconInfo}" Click="ToggleButton_Click"
+                          hc:IconSwitchElement.Geometry="{StaticResource SolidVolumeFullGeometry}" 
+                          hc:IconSwitchElement.GeometrySelected="{StaticResource SolidVolumeMuteGeometry}"/>
+            <hc:PreviewSlider x:Name="PlayProgressInfo" Margin="5" Width="500" hc:BorderThickness="5" VerticalAlignment="Center"
+                              Interval="1" SmallChange="1" Maximum="100" Minimum="0" 
+                              Thumb.DragStarted="PlayProgressInfo_DragStarted" Thumb.DragCompleted="PlayProgressInfo_DragCompleted" />
+            <Button Margin="5" Style="{StaticResource ButtonInfo}" hc:IconElement.Geometry="{StaticResource FullScreenGeometry}"/>
+            <TextBlock x:Name="PlayTimeText" Text="00:00:00 / 00:00:00" Foreground="#333333" VerticalAlignment="Center" Margin="10,0" FontSize="18"/>
+        </StackPanel>
+    </Grid>
+
+</uiControls:RegionViewControl>

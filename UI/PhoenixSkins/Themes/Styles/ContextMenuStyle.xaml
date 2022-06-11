@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PhoenixSkins.Styles">
+
+    <Style x:Key="BaseMenuItem" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource MaterialDesignMenuItem}">
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="FontSize" Value="{StaticResource H8FontSize}"/>
+        <Setter Property="Command" Value="{Binding Path=Command}"/>
+        <Setter Property="Header" Value="{Binding Path=MenuContent}"/>
+        <Setter Property="CommandParameter" Value="{Binding Path=CommandParameter}"/>
+    </Style>
+
+    <ContextMenu x:Key="BaseContextMenu" Style="{StaticResource MaterialDesignContextMenu}" ItemsSource="{Binding ContextMenuItems}" ItemContainerStyle="{StaticResource BaseMenuItem }"/>
+
+    
+</ResourceDictionary>
