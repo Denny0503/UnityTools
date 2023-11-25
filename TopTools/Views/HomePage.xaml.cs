@@ -15,7 +15,9 @@ namespace TopTools.Views
 
         private async void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            await WebView2Browser.InitializeAsync();
+
+            WebView2Browser.Address = $@"https://gitee.com/denny0503/TopTools/wikis";
         }
     }
 }

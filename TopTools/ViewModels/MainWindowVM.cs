@@ -1,4 +1,4 @@
-﻿using PhoenixUi.Events;
+﻿using PhoenixControl.Events;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PhoenixUi;
+using PhoenixControl;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -17,7 +17,7 @@ namespace TesseractOCR
     {
         private IRegionManager _regionManager;
 
-       
+
         public TesseractOCRModule(RegionManager regionManager)
         {
             _regionManager = regionManager;
@@ -33,7 +33,7 @@ namespace TesseractOCR
             containerRegistry.RegisterForNavigation<TesseractVideo>();
         }
 
-        
+
 
     }
 }

@@ -1,5 +1,5 @@
 ﻿using HandyControl.Controls;
-using PhoenixUi.Events;
+using PhoenixControl.Events;
 using Prism.Events;
 using Prism.Regions;
 using System;

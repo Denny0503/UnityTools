@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Downloader" Version="3.0.6" />
+    <PackageReference Include="FreeSpire.PDF" Version="8.6.0" />
+    <PackageReference Include="HandyControl" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.ca-ES" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.en" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.es" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.fa" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.fr" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.ja" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.ko-KR" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.pl" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.pt-BR" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.ru" Version="3.4.0" />
+    <PackageReference Include="HandyControl.Lang.tr" Version="3.4.0" />
+    <PackageReference Include="HelixToolkit" Version="2.24.0" />
+    <PackageReference Include="HelixToolkit.Core.Wpf" Version="2.24.0" />
+    <PackageReference Include="HelixToolkit.Wpf" Version="2.24.0" />
+    <PackageReference Include="HPSocket.Net" Version="5.9.3.1" />
+    <PackageReference Include="LibVLCSharp" Version="3.8.2" />
+    <PackageReference Include="LibVLCSharp.WPF" Version="3.8.2" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="NLog" Version="5.2.6" />
+    <PackageReference Include="PDFsharp" Version="6.0.0" />
+    <PackageReference Include="PDFsharp-MigraDoc" Version="6.0.0" />
+    <PackageReference Include="PDFsharp-WPF" Version="6.0.0" />
+    <PackageReference Include="ScottPlot" Version="4.1.68" />
+    <PackageReference Include="ScottPlot.WPF" Version="4.1.68" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.124" />
+    <PackageReference Include="SuperSocket" Version="1.6.6.1" />
+    <PackageReference Include="SuperSocket.WebSocket" Version="1.6.6.1" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
+  </ItemGroup>
+
+</Project>

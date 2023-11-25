@@ -8,21 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HandyControl" Version="3.3.0" />
-    <PackageReference Include="OpenCvSharp4" Version="4.5.5.20211231" />
-    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.5.5.20211231" />
-    <PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.5.5.20211231" />
+    <PackageReference Include="HandyControl" Version="3.4.0" />
+    <PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
+    <PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.8.0.20230708" />
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
-    <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
-    <PackageReference Include="Tesseract" Version="4.1.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+    <PackageReference Include="Tesseract" Version="5.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Commons\TopMethods\TopMethods.csproj" />
     <ProjectReference Include="..\..\UI\PhoenixSkins\PhoenixSkins.csproj" />
-    <ProjectReference Include="..\..\UI\PhoenixUi\PhoenixUi.csproj" />
+    <ProjectReference Include="..\..\UI\PhoenixControl\PhoenixControl.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

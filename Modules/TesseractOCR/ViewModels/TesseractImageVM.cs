@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Prism.Mvvm;
 using Prism;
 using Prism.Commands;
-using PhoenixUi;
+using PhoenixControl;
 using Tesseract;
 using TopMethods.Extend;
 using System.IO;

@@ -140,7 +140,7 @@
       <Project>{c264d412-d301-4f5d-a51c-ac6e5586e558}</Project>
       <Name>TopMethods</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Commons\PhoenixUi\PhoenixUi.csproj">
+    <ProjectReference Include="..\..\Commons\PhoenixControl\PhoenixControl.csproj">
       <Project>{2a6c9aa2-3e53-4820-aacc-96529f1daa05}</Project>
       <Name>TopUIControl</Name>
     </ProjectReference>

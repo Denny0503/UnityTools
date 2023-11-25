@@ -13,11 +13,11 @@ using Prism;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
-using PhoenixUi.Events;
+using PhoenixControl.Events;
 using TopMethods.Files;
-using PhoenixUi.Fonts;
+using PhoenixControl.Fonts;
 using GDI = System.Drawing;
-using PhoenixUi;
+using PhoenixControl;
 
 namespace WaterMarkTools.ViewModels
 {

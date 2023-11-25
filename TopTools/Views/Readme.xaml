@@ -6,7 +6,7 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:local="clr-namespace:TopTools.Views"
-             xmlns:webview2="clr-namespace:PhoenixUi.WebView2;assembly=PhoenixUi"
+             xmlns:webview2="clr-namespace:PhoenixControl.WebView2;assembly=PhoenixControl"
              mc:Ignorable="d"
              Loaded="UserControl_Loaded"
              d:DesignHeight="450"
