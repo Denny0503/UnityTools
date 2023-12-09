@@ -49,8 +49,7 @@
                             <hc:TextBox Grid.Column="1"
                                         Text="{Binding OriginImageSrc}"
                                         hc:InfoElement.Placeholder="原始图片文件地址"
-                                        Margin="0,0,15,0"
-                                        ShowClearButton="True" />
+                                        Margin="0,0,15,0" />
                             <Button Grid.Column="2"
                                     Width="90"
                                     Cursor="Hand"
@@ -71,7 +70,6 @@
                                    Content="目标路径："
                                    Margin="0,0,15,0" />
                             <hc:TextBox Grid.Column="1"
-                                        ShowClearButton="True"
                                         Text="{Binding DesImageSrc}"
                                         hc:InfoElement.Placeholder="转换后文件地址"
                                         Margin="0,0,15,0" />
@@ -97,8 +95,7 @@
                             <hc:TextBox Grid.Column="1"
                                         Text="{Binding WaterMarkImageSrc}"
                                         hc:InfoElement.Placeholder="水印图片文件地址"
-                                        Margin="0,0,15,0"
-                                        ShowClearButton="True" />
+                                        Margin="0,0,15,0"/>
                             <Button Grid.Column="2"
                                     Width="90"
                                     Cursor="Hand"
@@ -131,7 +128,6 @@
                                     hc:InfoElement.Placeholder="输入作为水印的文字"
                                     Height="160"
                                     Margin="0,0,15,0"
-                                    ShowClearButton="True"
                                     VerticalScrollBarVisibility="Auto"
                                     VerticalContentAlignment="Top"
                                     HorizontalContentAlignment="Left"

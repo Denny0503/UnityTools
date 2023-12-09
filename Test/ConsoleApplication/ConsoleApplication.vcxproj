@@ -151,7 +151,7 @@
     <ClCompile Include="ConsoleApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Commons\C_TopMethods\C_TopMethods.vcxproj">
+    <ProjectReference Include="..\..\Commons\C_UnityMethods\C_UnityMethods.vcxproj">
       <Project>{20dcdb6d-9078-4913-aa72-76399862caad}</Project>
     </ProjectReference>
   </ItemGroup>

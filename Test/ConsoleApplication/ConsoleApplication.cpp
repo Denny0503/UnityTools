@@ -8,8 +8,8 @@
 #include "strmif.h"
 #include <initguid.h>
 #include<string>
-#include "../../Commons/C_TopMethods/VideoDeviceHelper.h"
-#include "../../Commons/C_TopMethods/C_TopMethods.h"
+#include "../../Commons/C_UnityMethods/VideoDeviceHelper.h"
+#include "../../Commons/C_UnityMethods/C_UnityMethods.h"
 
 using namespace std;
 

@@ -144,9 +144,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\Commons\TopMethods\TopMethods.csproj">
+    <ProjectReference Include="..\..\Commons\UnityMethods\UnityMethods.csproj">
       <Project>{C264D412-D301-4F5D-A51C-AC6E5586E558}</Project>
-      <Name>TopMethods</Name>
+      <Name>UnityMethods</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Commons\TopUIControl\TopUIControl.csproj">
       <Project>{2A6C9AA2-3E53-4820-AACC-96529F1DAA05}</Project>

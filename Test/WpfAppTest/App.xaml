@@ -11,13 +11,13 @@
                 <ResourceDictionary>
                     <ResourceDictionary.MergedDictionaries>
                         <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
-                        <ResourceDictionary Source="pack://application:,,,/PhoenixSkins;component/Themes/SkinDefault.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/UnitySkins;component/Themes/SkinDefault.xaml" />
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
                 <ResourceDictionary>
                     <ResourceDictionary.MergedDictionaries>
                         <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
-                        <ResourceDictionary Source="pack://application:,,,/PhoenixSkins;component/Themes/Style.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/UnitySkins;component/Themes/Style.xaml" />
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>

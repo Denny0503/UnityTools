@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x86;x64</Platforms>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="HandyControl" Version="3.4.0" />
     <PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
@@ -18,15 +18,12 @@
     <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
     <PackageReference Include="Tesseract" Version="5.2.0" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\..\Commons\TopMethods\TopMethods.csproj" />
-    <ProjectReference Include="..\..\UI\PhoenixSkins\PhoenixSkins.csproj" />
-    <ProjectReference Include="..\..\UI\PhoenixControl\PhoenixControl.csproj" />
+    <ProjectReference Include="..\..\Commons\UnityMethods\UnityMethods.csproj" />
+    <ProjectReference Include="..\..\UI\UnitySkins\UnitySkins.csproj" />
+    <ProjectReference Include="..\..\UI\UnityControl\UnityControl.csproj" />
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="$(Configuration)=='Debug'">
     <Exec Command="xcopy &quot;$(TargetDir)$(TargetName)$(TargetExt)&quot; &quot;$(SolutionDir)Build\$(ConfigurationName)\Modules\&quot; /Y /S" />
   </Target>
-
 </Project>

@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Controls\Attach\**" />
+    <Compile Remove="Controls\Helper\**" />
+    <Compile Remove="Themes\Styles\MahApps.Metro\**" />
+    <EmbeddedResource Remove="Controls\Attach\**" />
+    <EmbeddedResource Remove="Controls\Helper\**" />
+    <EmbeddedResource Remove="Themes\Styles\MahApps.Metro\**" />
+    <None Remove="Controls\Attach\**" />
+    <None Remove="Controls\Helper\**" />
+    <None Remove="Themes\Styles\MahApps.Metro\**" />
+    <Page Remove="Controls\Attach\**" />
+    <Page Remove="Controls\Helper\**" />
+    <Page Remove="Themes\Styles\MahApps.Metro\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ControlzEx" Version="6.0.0" />
+    <PackageReference Include="Fody">
+      <Version>6.8.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="HandyControl">
+      <Version>3.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro.IconPacks.Material">
+      <Version>4.11.0</Version>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignColors">
+      <Version>2.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.77</Version>
+    </PackageReference>
+    <PackageReference Include="PropertyChanged.Fody">
+      <Version>4.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\TabControl\" />
+  </ItemGroup>
+</Project>

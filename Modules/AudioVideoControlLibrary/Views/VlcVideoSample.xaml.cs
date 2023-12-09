@@ -15,7 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TopMethods.Extend;
+using UnityMethods.Extend;
 using TopUIControl.Controls;
 
 namespace AudioVideoControlLibrary.Views
@@ -107,7 +107,7 @@ namespace AudioVideoControlLibrary.Views
         public void PlayLocalFile(string filePath)
         {
             if (!VlcVideoView.MediaPlayer.IsPlaying && File.Exists(filePath))
-            {                
+            {
                 VlcVideoView.MediaPlayer.Play(new Media(_libVLC, filePath, FromType.FromPath));
                 VlcVideoView.MediaPlayer.Volume = 150;
             }
@@ -188,7 +188,7 @@ namespace AudioVideoControlLibrary.Views
 
         private void RegionViewControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            if(null != VlcMediaPlayer && VlcMediaPlayer.IsPlaying)
+            if (null != VlcMediaPlayer && VlcMediaPlayer.IsPlaying)
             {
                 VlcMediaPlayer.Stop();
             }

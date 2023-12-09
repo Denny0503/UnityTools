@@ -136,17 +136,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Commons\TopMethods\TopMethods.csproj">
+    <ProjectReference Include="..\..\Commons\UnityMethods\UnityMethods.csproj">
       <Project>{c264d412-d301-4f5d-a51c-ac6e5586e558}</Project>
-      <Name>TopMethods</Name>
+      <Name>UnityMethods</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Commons\PhoenixControl\PhoenixControl.csproj">
+    <ProjectReference Include="..\..\Commons\UnityControl\UnityControl.csproj">
       <Project>{2a6c9aa2-3e53-4820-aacc-96529f1daa05}</Project>
       <Name>TopUIControl</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\PhoenixSkins\PhoenixSkins.csproj">
+    <ProjectReference Include="..\..\UnitySkins\UnitySkins.csproj">
       <Project>{e6736d52-171b-4ba5-a600-88eba92781d8}</Project>
-      <Name>PhoenixSkins</Name>
+      <Name>UnitySkins</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
